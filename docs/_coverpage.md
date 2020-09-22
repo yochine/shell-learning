@@ -1,5 +1,5 @@
 
-![logo](smile.jpg)
+![logo](logo.png)
 
 
 # shell
