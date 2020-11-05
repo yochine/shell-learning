@@ -4,29 +4,24 @@
 
 * spring篇
 
-  * springboot
-
-  * SpringSecurity
-    * [springSecurity原理](security/springsecurity.md)
+  * [springSecurity原理](spring/security/springsecurity.md)
+  * [springbean的生命周期](spring/springbean.md)
 
 * ORM篇
 
-  * Mybatisplus
+  
  
 * MQ篇
 
-  * RappitMQ
-
-  * Kafka
-
-  * RocketMQ
+ 
 
 * 数据库篇
 
-  * Mysql
 
-  * Redis
 
-  * MongoDB
+* JavaEE篇
+  * [synchronized源码解析](javaee/synchronized.md)
 
-* 
+* 部署篇
+
+* 工具篇
