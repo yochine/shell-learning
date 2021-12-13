@@ -1,10 +1,12 @@
 > **来自公众号：小姐姐味道**作者简介：小姐姐味道 \(xjjdog\)，一个不允许程序员走弯路的公众号。聚焦基础架构和Linux。十年架构，日百亿流量，与你探讨高并发世界，给你不一样的味道。
 
-在对[类的命名这篇长文](https://mp.weixin.qq.com/s?__biz=MzA4MTc4NTUxNQ==&mid=2650524593&idx=1&sn=99d335849dc1fc92f65dc618106aa844&chksm=8780cc75b0f745637ee03a63d7ea640ad1d4638478e8af5d811e92e985b1509219957408ec27&token=1556116051&lang=zh_CN&scene=21#wechat_redirect)中，我们提到了`Future`和`Promise`。Future相当于一个占位符，代表一个操作将来的结果。一般通过get可以直接阻塞得到结果，或者让它异步执行然后通过callback回调结果。但如果回调中嵌入了回调呢？如果层次很深，就是回调地狱。Java中的CompletableFuture其实就是Promise，用来解决回调地狱问题。Promise是为了让代码变得优美而存在的。有多优美？这么说吧，一旦你使用了CompletableFuture，就会爱不释手，就像初恋女友一样，天天想着她。
+在对[类的命名这篇长文](https://mp.weixin.qq.com/s?__biz=MzA4MTc4NTUxNQ==&mid=2650524593&idx=1&sn=99d335849dc1fc92f65dc618106aa844&chksm=8780cc75b0f745637ee03a63d7ea640ad1d4638478e8af5d811e92e985b1509219957408ec27&token=1556116051&lang=zh_CN&scene=21#wechat_redirect)
+中，我们提到了`Future`和`Promise`。Future相当于一个占位符，代表一个操作将来的结果。一般通过get可以直接阻塞得到结果，或者让它异步执行然后通过callback回调结果。但如果回调中嵌入了回调呢？如果层次很深，就是回调地狱。Java中的CompletableFuture其实就是Promise，用来解决回调地狱问题。Promise是为了让代码变得优美而存在的。有多优美？这么说吧，一旦你使用了CompletableFuture，就会爱不释手，就像初恋女友一样，天天想着她。
 
 ## 一系列静态方法
 
-从它的源代码中，我们可以看到，CompletableFuture直接提供了几个便捷的静态方法入口。其中有`run`和`supply`两组。![](https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLpsgAkLzXYicDoxwahBdiaaHM0ZpSk3Zk1GHA3tib55XlXYOibBiatlVcDPYLFoKDlF9JdqB4icJoOyC5rw/640?wx_fmt=png)run的参数是Runnable，而supply的参数是Supplier。前者没有返回值，而后者有，否则没有什么两样。这两组静态函数，都提供了传入自定义线程池的功能。如果你用的不是外置的线程池，那么它就会使用默认的ForkJoin线程池。默认的线程池，大小和用途你是控制不了的，所以还是建议自己传递一个。典型的代码，写起来是这个样子。
+从它的源代码中，我们可以看到，CompletableFuture直接提供了几个便捷的静态方法入口。其中有`run`和`supply`两组。![](https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLpsgAkLzXYicDoxwahBdiaaHM0ZpSk3Zk1GHA3tib55XlXYOibBiatlVcDPYLFoKDlF9JdqB4icJoOyC5rw/640?wx_fmt=png)
+run的参数是Runnable，而supply的参数是Supplier。前者没有返回值，而后者有，否则没有什么两样。这两组静态函数，都提供了传入自定义线程池的功能。如果你用的不是外置的线程池，那么它就会使用默认的ForkJoin线程池。默认的线程池，大小和用途你是控制不了的，所以还是建议自己传递一个。典型的代码，写起来是这个样子。
 
 ```
 CompletableFuture<String> future = CompletableFuture.supplyAsync(()->{ 
