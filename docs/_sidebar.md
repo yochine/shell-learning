@@ -10,14 +10,19 @@
   * [sa-token-实战](spring/security/sa-token-实战.md)
   * [Security+JWT原理解析](spring/security/Security+JWT原理解析.md)
   * [Spring Security 集成微信公众号 OAuth2.0授权](spring/security/SpringSecurity集成微信公众号OAuth2.0授权.md)
+  * [@Autowired的这些骚操作，你都知道吗](spring/springboot/@Autowired的这些骚操作，你都知道吗？.md)
+  * [Springboot日志、配置文件、接口数据如何脱敏](spring/springboot/Springboot日志、配置文件、接口数据如何脱敏？.md)
+  * [springboot-starter.md](spring/springboot/springboot-starter.md)
 
 * springcloud篇
   
   * [Sentinel实战](spring/springcloud/Sentinel实战.md)
+  * [OAuth2.0](spring/OAuth2.0.md)
 
 * apm篇
   
   * [skywalking实战](apm/skywalking实战.md)
+  * [蓝绿滚动灰度发布区别](apm/蓝绿滚动灰度发布区别.md)
 
 * ORM篇
 
@@ -37,6 +42,13 @@
   * [接口性能优化](javaee/接口性能优化.md)
   * [秒杀系统](javaee/秒杀系统.md)
   * [高并发下如何保证接口的幂等性](javaee/高并发下如何保证接口的幂等性.md)
+  * [CompletableFuture使用](javaee/CompletableFuture使用.md)
+  * [Redis实战篇：巧用数据类型实现亿级数据统计](javaee/Redis实战篇：巧用数据类型实现亿级数据统计.md)
+  * [亿级用户设计](javaee/亿级用户设计.md)
+  * [图解：电商支付架构设计](javaee/图解：电商支付架构设计.md)
+  * [如何设计高并发架构](javaee/如何设计高并发架构.md)
+  * [线程池扩展](javaee/线程池扩展.md)
+  * [虾皮Java后端面试15连问](javaee/虾皮Java后端面试15连问.md)
 
 * 部署篇
 
