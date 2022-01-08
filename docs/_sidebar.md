@@ -53,7 +53,11 @@
   * [虾皮Java后端面试15连问](javaee/虾皮Java后端面试15连问.md)
   * [redis分布式锁注解实现](javaee/redis分布式锁注解实现.md)
   * [transaction注解的坑（一）](javaee/transaction注解的坑（一）.md)
+  * [transaction注解的坑（二）](javaee/transaction注解的坑（二）.md)
+  * [transaction注解的坑（三）](javaee/transaction注解的坑（三）.md)
+ 
 
 * 部署篇
 
 * 工具篇
+  * [免费的性能测试工具](tools/免费的性能测试工具.md)
